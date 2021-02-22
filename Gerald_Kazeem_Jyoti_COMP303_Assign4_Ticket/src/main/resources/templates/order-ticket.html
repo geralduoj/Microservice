@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- 
+        Authors -----------
+		Gerald Uchie-Okoro - 301064861
+		Kazeem Ademola Odukale - 301021750 
+		Jyoti Jairath - 301101579
+-->
+<html xmlns:th="http://thymeleaf.org">
+<head>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link th:href="@{/styles/cover.css}" rel="stylesheet" />
+
+<meta charset="ISO-8859-1">
+<title>Add Ticket</title>
+</head>
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Ticket Data</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href="/">Home</a>
+        <a class="nav-link active" href="/order-ticket">Add Ticket</a>
+        <a class="nav-link" href="/tickets">Tickets</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="row">
+        	<div class="col">
+      
+      <div class="p-3 mb-2 bg-white text-dark">
+      
+      <form action="#" th:action="@{/addticket}" th:object="${ticket}" method="post">    
+				    <label for="movieName">Movie Name</label>
+				    <input type="text" th:field="*{movieName}" id="movieName" placeholder="Movie Name">
+				    <span th:if="${#fields.hasErrors('movieName')}" th:errors="*{movieName}"></span>
+				    </br>
+				    <label for="custID">Customer ID</label>
+				    <input type="text" th:field="*{custID}" id="custID" placeholder="Language">
+				    <span th:if="${#fields.hasErrors('custID')}" th:errors="*{custID}"></span>
+				    </br>
+				    <label for="amountPaid">Amount Paid</label>
+				    <input type="text" th:field="*{amountPaid}" id="amountPaid" placeholder="Amount Paid">
+				    <span th:if="${#fields.hasErrors('amountPaid')}" th:errors="*{amountPaid}"></span>
+				    </br>
+				    <label for="numberofTicket">Number Of Ticket</label>
+				    <input type="text" th:field="*{numberofTicket}" id="numberofTicket" placeholder="Number of Ticket">
+				    <span th:if="${#fields.hasErrors('numberofTicket')}" th:errors="*{numberofTicket}"></span>
+				    </br>
+				    <label for="date">Date</label>
+				    <input type="text" th:field="*{date}" id="date" placeholder="Date">
+				    <span th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></span>
+				    <label for="time">Time</label>
+				    <input type="text" th:field="*{time}" id="date" placeholder="Time">
+				    <span th:if="${#fields.hasErrors('time')}" th:errors="*{time}"></span>
+				    </br>
+				    <label for="venue">Venue</label>
+				    <input type="text" th:field="*{venue}" id="venue" placeholder="Venue">
+				    <span th:if="${#fields.hasErrors('venue')}" th:errors="*{venue}"></span>
+				    </br>
+				    <input type="submit" value="Submit">
+		</form>
+      
+      </div>
+      
+          
+        </div>
+        
+        </div>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+	</div>
+  </footer>
+</div>
+</body>
+</html>
